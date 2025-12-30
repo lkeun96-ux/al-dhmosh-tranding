@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AL DHMOSH TRADING Co., Ltd - Premium Used Vehicle Export</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-black: #0a0a0a;
+            --secondary-black: #111111;
+            --tertiary-black: #1a1a1a;
+            --card-black: #161616;
+            --border-dark: #252525;
+            --gold: #c9a962;
+            --gold-light: #d4b978;
+            --gold-dark: #b8944d;
+            --text-white: #ffffff;
+            --text-gray: #888888;
+            --text-light-gray: #aaaaaa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            background: var(--primary-black);
+            color: var(--text-white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        body[dir="rtl"] {
+            font-family: 'Noto Sans Arabic', 'Pretendard', sans-serif;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.25rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-white);
+            text-decoration: none;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            padding: 0.4rem 0.8rem;
+            border: 1px solid var(--border-dark);
+            background: transparent;
+            color: var(--text-gray);
+            font-weight: 500;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--primary-black);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-menu-btn span {
+            width: 22px;
+            height: 1px;
+            background: var(--text-white);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80') center/cover;
+            opacity: 0.6;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.85) 0%, rgba(10, 10, 10, 0.6) 50%, rgba(10, 10, 10, 0.8) 100%);
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 10rem 3rem 6rem;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .hero-tag::before {
+            content: '';
+            width: 50px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: var(--text-white);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-text h1 strong {
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        .hero-text p {
+            font-size: 1.05rem;
+            color: var(--text-gray);
+            margin-bottom: 2.5rem;
+            line-height: 1.9;
+            font-weight: 300;
+            max-width: 520px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--primary-black);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-white);
+            border: 1px solid var(--border-dark);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .hero-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-dark);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Section Common */
+        section {
+            padding: 7rem 3rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--text-white);
+            margin-bottom: 1rem;
+        }
+
+        .section-title strong {
+            font-weight: 600;
+        }
+
+        .section-desc {
+            color: var(--text-gray);
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--secondary-black);
+        }
+
+        .about-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image-main {
+            width: 100%;
+            height: 550px;
+            background: url('images/about_car.jpg') center/cover;
+        }
+
+        .about-image-accent {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 160px;
+            height: 160px;
+            border: 1px solid var(--gold);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-black);
+        }
+
+        .about-image-accent .number {
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .about-image-accent .text {
+            font-size: 0.65rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 0.25rem;
+        }
+
+        .about-content h2 {
+            font-size: 2.2rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .about-content h2 strong {
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .about-content p {
+            color: var(--text-gray);
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
+            line-height: 1.9;
+            font-weight: 300;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-dark);
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .about-feature-icon {
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+        }
+
+        .about-feature-text {
+            font-size: 0.85rem;
+            color: var(--text-light-gray);
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--primary-black);
+        }
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--card-black);
+            border: 1px solid var(--border-dark);
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--gold);
+        }
+
+        .service-image {
+            height: 220px;
+            position: relative;
+        }
+
+        .service-card:nth-child(1) .service-image {
+            background: url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80') center/cover;
+        }
+
+        .service-card:nth-child(2) .service-image {
+            background: url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=600&q=80') center/cover;
+        }
+
+        .service-card:nth-child(3) .service-image {
+            background: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80') center/cover;
+        }
+
+        .service-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30%;
+            background: linear-gradient(to top, var(--card-black), transparent);
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-number {
+            font-size: 0.7rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-content h3 {
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-content p {
+            color: var(--text-gray);
+            line-height: 1.8;
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+
+        /* Products Section */
+        .products {
+            background: var(--secondary-black);
+        }
+
+        .products-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .product-card {
+            position: relative;
+            height: 450px;
+            overflow: hidden;
+            border: 1px solid var(--border-dark);
+            transition: all 0.4s ease;
+        }
+
+        .product-card:hover {
+            border-color: var(--gold);
+        }
+
+        .product-card:first-child {
+            background: url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=800&q=80') center/cover;
+            cursor: pointer;
+        }
+
+        .product-card:last-child {
+            background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80') center/cover;
+            cursor: pointer;
+        }
+
+        /* Gallery Modal */
+        .gallery-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        .gallery-modal.active {
+            display: block;
+        }
+
+        .gallery-header {
+            max-width: 1400px;
+            margin: 0 auto 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+        }
+
+        .gallery-title {
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--text-white);
+        }
+
+        .gallery-title strong {
+            color: var(--gold);
+        }
+
+        .gallery-close {
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            border: 1px solid var(--border-dark);
+            color: var(--text-white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-close:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .gallery-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 4/3;
+            background: var(--card-black);
+            border: 1px solid var(--border-dark);
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            border-color: var(--gold);
+            transform: scale(1.02);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .gallery-item-number {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--gold);
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.98);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            border: 1px solid var(--border-dark);
+            color: var(--text-white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .lightbox-close:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            border: 1px solid var(--border-dark);
+            color: var(--text-white);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .lightbox-nav:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .lightbox-prev {
+            left: 2rem;
+        }
+
+        .lightbox-next {
+            right: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-header {
+                padding-top: 1rem;
+            }
+            .gallery-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(10, 10, 10, 0.9) 0%, rgba(10, 10, 10, 0.1) 60%, rgba(10, 10, 10, 0.3) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2.5rem;
+        }
+
+        .product-tag {
+            color: var(--gold);
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .product-card h3 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 0.75rem;
+        }
+
+        .product-card p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-weight: 300;
+            font-size: 0.9rem;
+            max-width: 380px;
+        }
+
+        .product-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .product-feature {
+            background: rgba(201, 169, 98, 0.12);
+            color: var(--gold);
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--primary-black);
+            padding: 7rem 3rem;
+        }
+
+        .contact-info-center {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem;
+            border: 1px solid var(--border-dark);
+            background: var(--card-black);
+            text-align: center;
+        }
+
+        .contact-info-center h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+            color: var(--gold);
+        }
+
+        .contact-items-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .contact-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 2rem;
+        }
+
+        .contact-info {
+            padding: 2.5rem;
+            border: 1px solid var(--border-dark);
+            background: var(--card-black);
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .contact-items-row .contact-item {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .contact-item:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            border: 1px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .contact-text p {
+            color: var(--text-gray);
+            line-height: 1.7;
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+
+        .contact-text a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-text a:hover {
+            color: var(--gold);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--secondary-black);
+            border-top: 1px solid var(--border-dark);
+            padding: 4rem 3rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 1.25rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .footer-brand h3 span {
+            color: var(--gold);
+        }
+
+        .footer-brand p {
+            color: var(--text-gray);
+            line-height: 1.9;
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+
+        .footer-links h4 {
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-dark);
+            padding-top: 1.5rem;
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 0.8rem;
+            font-weight: 300;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-container { padding: 1.25rem 2rem; }
+            section { padding: 5rem 2rem; }
+            .hero-content { grid-template-columns: 1fr; padding: 8rem 2rem 4rem; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .hero-stats { display: none; }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            .contact-items-row { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .products-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary-black);
+                flex-direction: column;
+                padding: 1.5rem 2rem;
+                gap: 1rem;
+                border-bottom: 1px solid var(--border-dark);
+            }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: flex; }
+            .lang-switcher { display: none; }
+            .hero-text h1 { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
+            .about-features { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .form-group.full-width { grid-column: span 1; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
+            .product-card { height: 380px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="logo">AL <span>DHMOSH</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" data-lang-key="nav_home">Home</a></li>
+                <li><a href="#about" data-lang-key="nav_about">About</a></li>
+                <li><a href="#services" data-lang-key="nav_services">Services</a></li>
+                <li><a href="#products" data-lang-key="nav_products">Products</a></li>
+                <li><a href="#contact" data-lang-key="nav_contact">Contact</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ko">한국어</button>
+                <button class="lang-btn" data-lang="ar">العربية</button>
+            </div>
+            <button class="mobile-menu-btn"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-tag" data-lang-key="hero_tag">Premium Auto Export</span>
+                <h1 data-lang-key="hero_title">Redefining <strong>Excellence</strong> in Vehicle Export to the Arab World</h1>
+                <p data-lang-key="hero_desc">AL DHMOSH TRADING delivers exceptional quality used vehicles and automotive parts to discerning clients across the Arab region.</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary" data-lang-key="cta_contact">Get in Touch</a>
+                    <a href="#services" class="btn btn-outline" data-lang-key="cta_learn">Explore</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label" data-lang-key="stat_vehicles">Vehicles Exported</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label" data-lang-key="stat_countries">Countries</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label" data-lang-key="stat_years">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-grid">
+            <div class="about-image fade-in">
+                <div class="about-image-main"></div>
+                <div class="about-image-accent">
+                    <div class="number">10+</div>
+                    <div class="text" data-lang-key="years_exp">Years</div>
+                </div>
+            </div>
+            <div class="about-content fade-in">
+                <h2 data-lang-key="about_title">Your Premier Partner for <strong>Luxury Used Vehicles</strong></h2>
+                <p data-lang-key="about_p1">AL DHMOSH TRADING Co., Ltd. stands as a distinguished trading company based in Korea, specializing in the export of meticulously selected used vehicles and premium automotive parts to the Arab region.</p>
+                <p data-lang-key="about_p2">Our profound understanding of Arab market dynamics, combined with an unwavering commitment to excellence, positions us as the preferred partner for clients seeking exceptional Korean vehicles.</p>
+                <div class="about-features">
+                    <div class="about-feature">
+                        <div class="about-feature-icon"></div>
+                        <span class="about-feature-text" data-lang-key="feature_1">Quality Certified</span>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon"></div>
+                        <span class="about-feature-text" data-lang-key="feature_2">Arab Market Expert</span>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon"></div>
+                        <span class="about-feature-text" data-lang-key="feature_3">Premium Logistics</span>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon"></div>
+                        <span class="about-feature-text" data-lang-key="feature_4">Competitive Pricing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-header">
+            <span class="section-tag" data-lang-key="services_tag">Services</span>
+            <h2 class="section-title" data-lang-key="services_title">Exceptional <strong>Solutions</strong></h2>
+            <p class="section-desc" data-lang-key="services_desc">Comprehensive trading solutions for the discerning Arab market</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-image"></div>
+                <div class="service-content">
+                    <div class="service-number">01</div>
+                    <h3 data-lang-key="service1_title">Premium Vehicles</h3>
+                    <p data-lang-key="service1_desc">Curated selection of premium Korean used vehicles, meticulously inspected and prepared for export.</p>
+                </div>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-image"></div>
+                <div class="service-content">
+                    <div class="service-number">02</div>
+                    <h3 data-lang-key="service2_title">Genuine Parts</h3>
+                    <p data-lang-key="service2_desc">Authentic OEM and premium aftermarket parts for all major vehicle brands.</p>
+                </div>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-image"></div>
+                <div class="service-content">
+                    <div class="service-number">03</div>
+                    <h3 data-lang-key="service3_title">Global Logistics</h3>
+                    <p data-lang-key="service3_desc">Seamless export handling with documentation, shipping, and customs expertise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="section-header">
+            <span class="section-tag" data-lang-key="products_tag">Collection</span>
+            <h2 class="section-title" data-lang-key="products_title">Premium <strong>Vehicles & Parts</strong></h2>
+            <p class="section-desc" data-lang-key="products_desc">Explore our distinguished collection</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card fade-in" onclick="openGallery('vehicles')">
+                <div class="product-overlay">
+                    <span class="product-tag">Vehicles</span>
+                    <h3 data-lang-key="product1_title">Used Vehicles</h3>
+                    <p data-lang-key="product1_desc">Exceptional Korean vehicles including sedans, SUVs, and commercial vehicles.</p>
+                    <div class="product-features">
+                        <span class="product-feature">Sedans</span>
+                        <span class="product-feature">SUVs</span>
+                        <span class="product-feature">Trucks</span>
+                        <span class="product-feature">Commercial</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in" onclick="openGallery('parts')">
+                <div class="product-overlay">
+                    <span class="product-tag">Parts</span>
+                    <h3 data-lang-key="product2_title">Auto Parts</h3>
+                    <p data-lang-key="product2_desc">Comprehensive inventory of genuine and premium aftermarket parts.</p>
+                    <div class="product-features">
+                        <span class="product-feature">Engine</span>
+                        <span class="product-feature">Body</span>
+                        <span class="product-feature">Electronics</span>
+                        <span class="product-feature">Accessories</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicles Gallery Modal -->
+    <div class="gallery-modal" id="vehicles-gallery">
+        <div class="gallery-header">
+            <h2 class="gallery-title">Used <strong>Vehicles</strong> Gallery</h2>
+            <button class="gallery-close" onclick="closeGallery('vehicles')">&times;</button>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox('vehicles', 0)">
+                <img src="images/vehicle1.jpg" alt="Used Cars Lineup">
+                <span class="gallery-item-number">01</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('vehicles', 1)">
+                <img src="images/vehicle2.jpg" alt="Lexus SUV">
+                <span class="gallery-item-number">02</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('vehicles', 2)">
+                <img src="images/vehicle3.jpg" alt="BMW M4">
+                <span class="gallery-item-number">03</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('vehicles', 3)">
+                <img src="images/vehicle4.jpg" alt="BMW M2">
+                <span class="gallery-item-number">04</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('vehicles', 4)">
+                <img src="images/vehicle5.jpg" alt="Hyundai">
+                <span class="gallery-item-number">05</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('vehicles', 5)">
+                <img src="images/card_kr.jpg" alt="Business Card Korean">
+                <span class="gallery-item-number">06</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('vehicles', 6)">
+                <img src="images/card_en.jpg" alt="Business Card English">
+                <span class="gallery-item-number">07</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Parts Gallery Modal -->
+    <div class="gallery-modal" id="parts-gallery">
+        <div class="gallery-header">
+            <h2 class="gallery-title">Auto <strong>Parts</strong> Gallery</h2>
+            <button class="gallery-close" onclick="closeGallery('parts')">&times;</button>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox('parts', 0)">
+                <img src="images/parts1.jpg" alt="Auto Parts">
+                <span class="gallery-item-number">01</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 1)">
+                <img src="images/parts2.jpg" alt="Auto Parts">
+                <span class="gallery-item-number">02</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 2)">
+                <img src="images/parts3.jpg" alt="Auto Parts">
+                <span class="gallery-item-number">03</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 3)">
+                <img src="images/parts4.jpg" alt="Auto Parts">
+                <span class="gallery-item-number">04</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 4)">
+                <img src="images/parts5.jpg" alt="Auto Parts">
+                <span class="gallery-item-number">05</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 5)">
+                <img src="images/parts6.jpg" alt="Auto Parts">
+                <span class="gallery-item-number">06</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 6)">
+                <img src="images/parts7.jpg" alt="Headlights">
+                <span class="gallery-item-number">07</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 7)">
+                <img src="images/parts8.jpg" alt="Frame Parts">
+                <span class="gallery-item-number">08</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 8)">
+                <img src="images/parts9.jpg" alt="Valve Parts">
+                <span class="gallery-item-number">09</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 9)">
+                <img src="images/parts10.jpg" alt="Hood">
+                <span class="gallery-item-number">10</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 10)">
+                <img src="images/parts11.jpg" alt="Grille">
+                <span class="gallery-item-number">11</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 11)">
+                <img src="images/parts12.jpg" alt="Engine Mount">
+                <span class="gallery-item-number">12</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 12)">
+                <img src="images/parts13.jpg" alt="Under Cover">
+                <span class="gallery-item-number">13</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 13)">
+                <img src="images/parts14.jpg" alt="Genuine Parts">
+                <span class="gallery-item-number">14</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 14)">
+                <img src="images/parts15.jpg" alt="Bumper Parts">
+                <span class="gallery-item-number">15</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 15)">
+                <img src="images/parts16.jpg" alt="Washer Tank">
+                <span class="gallery-item-number">16</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 16)">
+                <img src="images/parts17.jpg" alt="Latch Assembly">
+                <span class="gallery-item-number">17</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 17)">
+                <img src="images/parts18.jpg" alt="Tail Lights">
+                <span class="gallery-item-number">18</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 18)">
+                <img src="images/parts19.jpg" alt="Cowl Top Cover">
+                <span class="gallery-item-number">19</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 19)">
+                <img src="images/parts20.jpg" alt="Bumper Bracket">
+                <span class="gallery-item-number">20</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 20)">
+                <img src="images/card_kr.jpg" alt="Business Card Korean">
+                <span class="gallery-item-number">21</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 21)">
+                <img src="images/card_en.jpg" alt="Business Card English">
+                <span class="gallery-item-number">22</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#8249;</button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Gallery Image">
+        </div>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#8250;</button>
+    </div>
+
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <span class="section-tag" data-lang-key="contact_tag">Contact</span>
+            <h2 class="section-title" data-lang-key="contact_title">Begin Your <strong>Journey</strong></h2>
+            <p class="section-desc" data-lang-key="contact_desc">Connect with our team today</p>
+        </div>
+        <div class="contact-info-center fade-in">
+            <h3 data-lang-key="contact_info_title">Get in Touch</h3>
+            <div class="contact-items-row">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-text">
+                        <h4 data-lang-key="contact_address">Location</h4>
+                        <p data-lang-key="contact_address_text">82 Chowon-ro, Daegot-myeon<br>Gimpo-si, Gyeonggi-do, Korea</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-text">
+                        <h4 data-lang-key="contact_phone">Phone</h4>
+                        <p><a href="tel:+821040232970">+82-10-4023-2970</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-text">
+                        <h4 data-lang-key="contact_email">Email</h4>
+                        <p><a href="mailto:ahmedfadhil93@yahoo.com">ahmedfadhil93@yahoo.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>AL <span>DHMOSH</span></h3>
+                <p>Your distinguished partner for premium used vehicle exports to the Arab region.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#products">Products</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Vehicles</a></li>
+                    <li><a href="#">Parts</a></li>
+                    <li><a href="#">Logistics</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="#contact">Gimpo, Korea</a></li>
+                    <li><a href="tel:+821040232970">+82-10-4023-2970</a></li>
+                    <li><a href="mailto:ahmedfadhil93@yahoo.com">Email Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 AL DHMOSH TRADING Co., Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                nav_home: "Home", nav_about: "About", nav_services: "Services", nav_products: "Products", nav_contact: "Contact",
+                hero_tag: "Premium Auto Export",
+                hero_title: "Redefining <strong>Excellence</strong> in Vehicle Export to the Arab World",
+                hero_desc: "AL DHMOSH TRADING delivers exceptional quality used vehicles and automotive parts to discerning clients across the Arab region.",
+                cta_contact: "Get in Touch", cta_learn: "Explore",
+                stat_vehicles: "Vehicles Exported", stat_countries: "Countries", stat_years: "Years Experience", years_exp: "Years",
+                about_title: "Your Premier Partner for <strong>Luxury Used Vehicles</strong>",
+                about_p1: "AL DHMOSH TRADING Co., Ltd. stands as a distinguished trading company based in Korea, specializing in the export of meticulously selected used vehicles and premium automotive parts to the Arab region.",
+                about_p2: "Our profound understanding of Arab market dynamics, combined with an unwavering commitment to excellence, positions us as the preferred partner for clients seeking exceptional Korean vehicles.",
+                feature_1: "Quality Certified", feature_2: "Arab Market Expert", feature_3: "Premium Logistics", feature_4: "Competitive Pricing",
+                services_tag: "Services", services_title: "Exceptional <strong>Solutions</strong>", services_desc: "Comprehensive trading solutions for the discerning Arab market",
+                service1_title: "Premium Vehicles", service1_desc: "Curated selection of premium Korean used vehicles, meticulously inspected and prepared for export.",
+                service2_title: "Genuine Parts", service2_desc: "Authentic OEM and premium aftermarket parts for all major vehicle brands.",
+                service3_title: "Global Logistics", service3_desc: "Seamless export handling with documentation, shipping, and customs expertise.",
+                products_tag: "Collection", products_title: "Premium <strong>Vehicles & Parts</strong>", products_desc: "Explore our distinguished collection",
+                product1_title: "Used Vehicles", product1_desc: "Exceptional Korean vehicles including sedans, SUVs, and commercial vehicles.",
+                product2_title: "Auto Parts", product2_desc: "Comprehensive inventory of genuine and premium aftermarket parts.",
+                contact_tag: "Contact", contact_title: "Begin Your <strong>Journey</strong>", contact_desc: "Connect with our team today",
+                contact_info_title: "Get in Touch", contact_address: "Location", contact_phone: "Phone", contact_email: "Email", contact_address_text: "82 Chowon-ro, Daegot-myeon<br>Gimpo-si, Gyeonggi-do, Korea",
+                form_title: "Send a Message", form_name: "Name", form_email: "Email", form_subject: "Subject", form_message: "Message", form_submit: "Send Message"
+            },
+            ko: {
+                nav_home: "홈", nav_about: "회사소개", nav_services: "서비스", nav_products: "제품", nav_contact: "문의",
+                hero_tag: "프리미엄 자동차 수출",
+                hero_title: "아랍 세계로의 차량 수출, <strong>탁월함</strong>을 재정의하다",
+                hero_desc: "알드흐모쉬트레이딩은 아랍 지역의 고객에게 탁월한 품질의 중고차 및 자동차 부품을 제공합니다.",
+                cta_contact: "문의하기", cta_learn: "더보기",
+                stat_vehicles: "수출 차량", stat_countries: "서비스 국가", stat_years: "년 경력", years_exp: "년",
+                about_title: "<strong>프리미엄 중고차</strong>를 위한 최고의 파트너",
+                about_p1: "알드흐모쉬트레이딩 주식회사는 한국에 본사를 둔 전문 무역회사로, 엄선된 중고차와 프리미엄 자동차 부품을 아랍 지역에 수출합니다.",
+                about_p2: "아랍 시장에 대한 깊은 이해와 탁월함에 대한 확고한 헌신을 바탕으로, 뛰어난 한국 차량을 찾는 고객에게 선호되는 파트너입니다.",
+                feature_1: "품질 인증", feature_2: "아랍 시장 전문", feature_3: "프리미엄 물류", feature_4: "경쟁력 있는 가격",
+                services_tag: "서비스", services_title: "탁월한 <strong>솔루션</strong>", services_desc: "아랍 시장을 위한 종합 무역 솔루션",
+                service1_title: "프리미엄 차량", service1_desc: "엄선된 프리미엄 한국 중고차, 철저한 검수를 거친 차량.",
+                service2_title: "정품 부품", service2_desc: "모든 주요 차량 브랜드의 정품 OEM 및 프리미엄 부품.",
+                service3_title: "글로벌 물류", service3_desc: "문서화, 배송 및 통관 전문성을 갖춘 원활한 수출.",
+                products_tag: "컬렉션", products_title: "프리미엄 <strong>차량 & 부품</strong>", products_desc: "엄선된 컬렉션",
+                product1_title: "중고차", product1_desc: "세단, SUV, 상용차를 포함한 탁월한 한국 차량.",
+                product2_title: "자동차 부품", product2_desc: "정품 및 프리미엄 애프터마켓 부품의 종합 재고.",
+                contact_tag: "문의", contact_title: "새로운 <strong>여정</strong>을 시작하세요", contact_desc: "오늘 저희 팀과 연결하세요",
+                contact_info_title: "연락처", contact_address: "주소", contact_phone: "전화", contact_email: "이메일", contact_address_text: "경기도 김포시 대곶면 초원로 82",
+                form_title: "메시지 보내기", form_name: "이름", form_email: "이메일", form_subject: "제목", form_message: "메시지", form_submit: "보내기"
+            },
+            ar: {
+                nav_home: "الرئيسية", nav_about: "من نحن", nav_services: "الخدمات", nav_products: "المنتجات", nav_contact: "اتصل بنا",
+                hero_tag: "تصدير السيارات الفاخرة",
+                hero_title: "إعادة تعريف <strong>التميز</strong> في تصدير السيارات إلى العالم العربي",
+                hero_desc: "تقدم شركة الدحموش للتجارة سيارات مستعملة استثنائية الجودة وقطع غيار للعملاء المميزين.",
+                cta_contact: "تواصل معنا", cta_learn: "استكشف",
+                stat_vehicles: "سيارة مصدرة", stat_countries: "دولة", stat_years: "سنوات خبرة", years_exp: "سنوات",
+                about_title: "شريكك الأول للحصول على <strong>سيارات فاخرة</strong>",
+                about_p1: "شركة الدحموش للتجارة المحدودة شركة تجارية مرموقة مقرها كوريا، متخصصة في تصدير السيارات المستعملة المختارة بعناية.",
+                about_p2: "إن فهمنا العميق لديناميكيات السوق العربي يجعلنا الشريك المفضل للعملاء.",
+                feature_1: "جودة معتمدة", feature_2: "خبير السوق العربي", feature_3: "لوجستيات متميزة", feature_4: "أسعار تنافسية",
+                services_tag: "الخدمات", services_title: "حلول <strong>استثنائية</strong>", services_desc: "حلول شاملة للسوق العربي",
+                service1_title: "سيارات فاخرة", service1_desc: "مجموعة مختارة من السيارات الكورية الفاخرة.",
+                service2_title: "قطع غيار أصلية", service2_desc: "قطع غيار OEM أصلية لجميع الماركات.",
+                service3_title: "لوجستيات عالمية", service3_desc: "معالجة تصدير سلسة مع خبرة جمركية.",
+                products_tag: "المجموعة", products_title: "<strong>سيارات وقطع غيار</strong> فاخرة", products_desc: "استكشف مجموعتنا المميزة",
+                product1_title: "سيارات مستعملة", product1_desc: "سيارات كورية استثنائية بما في ذلك السيدان والدفع الرباعي.",
+                product2_title: "قطع الغيار", product2_desc: "مخزون شامل من القطع الأصلية والفاخرة.",
+                contact_tag: "اتصل بنا", contact_title: "ابدأ <strong>رحلتك</strong>", contact_desc: "تواصل مع فريقنا اليوم",
+                contact_info_title: "تواصل معنا", contact_address: "الموقع", contact_phone: "الهاتف", contact_email: "البريد", contact_address_text: "82 Chowon-ro, Daegot-myeon<br>Gimpo-si, Gyeonggi-do, Korea",
+                form_title: "أرسل رسالة", form_name: "الاسم", form_email: "البريد", form_subject: "الموضوع", form_message: "الرسالة", form_submit: "إرسال"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-lang-key]').forEach(el => {
+                const key = el.getAttribute('data-lang-key');
+                if (translations[lang]?.[key]) el.innerHTML = translations[lang][key];
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
+        });
+
+        document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            new IntersectionObserver(entries => {
+                entries.forEach(e => e.isIntersecting && e.target.classList.add('visible'));
+            }, { threshold: 0.1 }).observe(el);
+        });
+
+        // Gallery Functions
+        const galleryImages = {
+            vehicles: [
+                'images/vehicle1.jpg',
+                'images/vehicle2.jpg',
+                'images/vehicle3.jpg',
+                'images/vehicle4.jpg',
+                'images/vehicle5.jpg',
+                'images/card_kr.jpg',
+                'images/card_en.jpg'
+            ],
+            parts: [
+                'images/parts1.jpg',
+                'images/parts2.jpg',
+                'images/parts3.jpg',
+                'images/parts4.jpg',
+                'images/parts5.jpg',
+                'images/parts6.jpg',
+                'images/parts7.jpg',
+                'images/parts8.jpg',
+                'images/parts9.jpg',
+                'images/parts10.jpg',
+                'images/parts11.jpg',
+                'images/parts12.jpg',
+                'images/parts13.jpg',
+                'images/parts14.jpg',
+                'images/parts15.jpg',
+                'images/parts16.jpg',
+                'images/parts17.jpg',
+                'images/parts18.jpg',
+                'images/parts19.jpg',
+                'images/parts20.jpg',
+                'images/card_kr.jpg',
+                'images/card_en.jpg'
+            ]
+        };
+
+        let currentGallery = '';
+        let currentIndex = 0;
+
+        function openGallery(type) {
+            document.getElementById(type + '-gallery').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery(type) {
+            document.getElementById(type + '-gallery').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function openLightbox(type, index) {
+            currentGallery = type;
+            currentIndex = index;
+            document.getElementById('lightbox-img').src = galleryImages[type][index];
+            document.getElementById('lightbox').classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        function navigateLightbox(direction) {
+            const images = galleryImages[currentGallery];
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            document.getElementById('lightbox-img').src = images[currentIndex];
+        }
+
+        // Close on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+                closeGallery('vehicles');
+                closeGallery('parts');
+            }
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // Close gallery when clicking outside
+        document.querySelectorAll('.gallery-modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
