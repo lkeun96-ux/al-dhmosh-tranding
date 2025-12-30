@@ -556,6 +556,45 @@
             display: block;
         }
 
+        .gallery-tabs {
+            max-width: 1400px;
+            margin: 0 auto 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .gallery-tab {
+            padding: 0.8rem 2rem;
+            background: transparent;
+            border: 1px solid var(--border-dark);
+            color: var(--text-gray);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .gallery-tab:hover {
+            border-color: var(--gold);
+            color: var(--text-white);
+        }
+
+        .gallery-tab.active {
+            border-color: var(--gold);
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        .gallery-tab-content {
+            display: none;
+        }
+
+        .gallery-tab-content.active {
+            display: block;
+        }
+
         .gallery-header {
             max-width: 1400px;
             margin: 0 auto 3rem;
@@ -1185,34 +1224,157 @@
             <h2 class="gallery-title">Used <strong>Vehicles</strong> Gallery</h2>
             <button class="gallery-close" onclick="closeGallery('vehicles')">&times;</button>
         </div>
-        <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox('vehicles', 0)">
-                <img src="images/vehicle1.jpg" alt="Used Cars Lineup">
-                <span class="gallery-item-number">01</span>
+        
+        <!-- 탭 버튼 -->
+        <div class="gallery-tabs">
+            <button class="gallery-tab active" onclick="switchVehicleTab('sedan')">Sedan</button>
+            <button class="gallery-tab" onclick="switchVehicleTab('truck')">Truck</button>
+            <button class="gallery-tab" onclick="switchVehicleTab('suv')">SUV</button>
+        </div>
+
+        <!-- 세단 탭 -->
+        <div class="gallery-tab-content active" id="sedan-tab">
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox('sedan', 0)">
+                    <img src="images/sedan1.jpg" alt="Hyundai Avante">
+                    <span class="gallery-item-number">01</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('sedan', 1)">
+                    <img src="images/sedan2.jpg" alt="Kia K5">
+                    <span class="gallery-item-number">02</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('sedan', 2)">
+                    <img src="images/sedan3.jpg" alt="Hyundai Grandeur">
+                    <span class="gallery-item-number">03</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('sedan', 3)">
+                    <img src="images/sedan4.jpg" alt="Kia K5">
+                    <span class="gallery-item-number">04</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('sedan', 4)">
+                    <img src="images/sedan5.jpg" alt="Hyundai Avante">
+                    <span class="gallery-item-number">05</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('sedan', 5)">
+                    <img src="images/sedan6.jpg" alt="Hyundai Sonata">
+                    <span class="gallery-item-number">06</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('sedan', 6)">
+                    <img src="images/sedan7.jpg" alt="Hyundai Sonata">
+                    <span class="gallery-item-number">07</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('sedan', 7)">
+                    <img src="images/sedan8.jpg" alt="Hyundai Sonata">
+                    <span class="gallery-item-number">08</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('sedan', 8)">
+                    <img src="images/sedan9.jpg" alt="Hyundai Grandeur">
+                    <span class="gallery-item-number">09</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('sedan', 9)">
+                    <img src="images/sedan10.jpg" alt="Hyundai Avante">
+                    <span class="gallery-item-number">10</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('sedan', 10)">
+                    <img src="images/sedan11.jpg" alt="Hyundai Casper">
+                    <span class="gallery-item-number">11</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('sedan', 11)">
+                    <img src="images/card_kr.jpg" alt="Business Card Korean">
+                    <span class="gallery-item-number">12</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('sedan', 12)">
+                    <img src="images/card_en.jpg" alt="Business Card English">
+                    <span class="gallery-item-number">13</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('sedan', 13)">
+                    <img src="images/gallery_logo.jpg" alt="AL DHMOSH Logo">
+                    <span class="gallery-item-number">14</span>
+                </div>
             </div>
-            <div class="gallery-item" onclick="openLightbox('vehicles', 1)">
-                <img src="images/vehicle2.jpg" alt="Lexus SUV">
-                <span class="gallery-item-number">02</span>
+        </div>
+
+        <!-- 트럭 탭 -->
+        <div class="gallery-tab-content" id="truck-tab">
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox('truck', 0)">
+                    <img src="images/truck1.jpg" alt="Hyundai Porter">
+                    <span class="gallery-item-number">01</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('truck', 1)">
+                    <img src="images/truck2.jpg" alt="Kia Bongo">
+                    <span class="gallery-item-number">02</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('truck', 2)">
+                    <img src="images/truck3.jpg" alt="Kia Bongo Refrigerator">
+                    <span class="gallery-item-number">03</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('truck', 3)">
+                    <img src="images/truck4.jpg" alt="Kia Bongo">
+                    <span class="gallery-item-number">04</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('truck', 4)">
+                    <img src="images/card_kr.jpg" alt="Business Card Korean">
+                    <span class="gallery-item-number">05</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('truck', 5)">
+                    <img src="images/card_en.jpg" alt="Business Card English">
+                    <span class="gallery-item-number">06</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('truck', 6)">
+                    <img src="images/gallery_logo.jpg" alt="AL DHMOSH Logo">
+                    <span class="gallery-item-number">07</span>
+                </div>
             </div>
-            <div class="gallery-item" onclick="openLightbox('vehicles', 2)">
-                <img src="images/vehicle3.jpg" alt="BMW M4">
-                <span class="gallery-item-number">03</span>
-            </div>
-            <div class="gallery-item" onclick="openLightbox('vehicles', 3)">
-                <img src="images/vehicle4.jpg" alt="BMW M2">
-                <span class="gallery-item-number">04</span>
-            </div>
-            <div class="gallery-item" onclick="openLightbox('vehicles', 4)">
-                <img src="images/vehicle5.jpg" alt="Hyundai">
-                <span class="gallery-item-number">05</span>
-            </div>
-            <div class="gallery-item" onclick="openLightbox('vehicles', 5)">
-                <img src="images/card_kr.jpg" alt="Business Card Korean">
-                <span class="gallery-item-number">06</span>
-            </div>
-            <div class="gallery-item" onclick="openLightbox('vehicles', 6)">
-                <img src="images/card_en.jpg" alt="Business Card English">
-                <span class="gallery-item-number">07</span>
+        </div>
+
+        <!-- SUV 탭 -->
+        <div class="gallery-tab-content" id="suv-tab">
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox('suv', 0)">
+                    <img src="images/suv1.jpg" alt="Hyundai Palisade">
+                    <span class="gallery-item-number">01</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('suv', 1)">
+                    <img src="images/suv2.jpg" alt="Hyundai Palisade">
+                    <span class="gallery-item-number">02</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('suv', 2)">
+                    <img src="images/suv3.jpg" alt="Kia Sorento">
+                    <span class="gallery-item-number">03</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('suv', 3)">
+                    <img src="images/suv4.jpg" alt="Hyundai Staria">
+                    <span class="gallery-item-number">04</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('suv', 4)">
+                    <img src="images/suv5.jpg" alt="Hyundai Palisade">
+                    <span class="gallery-item-number">05</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('suv', 5)">
+                    <img src="images/suv6.jpg" alt="Kia Carnival">
+                    <span class="gallery-item-number">06</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('suv', 6)">
+                    <img src="images/suv7.jpg" alt="Hyundai Palisade">
+                    <span class="gallery-item-number">07</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('suv', 7)">
+                    <img src="images/suv8.jpg" alt="Hyundai Palisade">
+                    <span class="gallery-item-number">08</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('suv', 8)">
+                    <img src="images/card_kr.jpg" alt="Business Card Korean">
+                    <span class="gallery-item-number">09</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('suv', 9)">
+                    <img src="images/card_en.jpg" alt="Business Card English">
+                    <span class="gallery-item-number">10</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('suv', 10)">
+                    <img src="images/gallery_logo.jpg" alt="AL DHMOSH Logo">
+                    <span class="gallery-item-number">11</span>
+                </div>
             </div>
         </div>
     </div>
@@ -1311,6 +1473,10 @@
             <div class="gallery-item" onclick="openLightbox('parts', 21)">
                 <img src="images/card_en.jpg" alt="Business Card English">
                 <span class="gallery-item-number">22</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('parts', 22)">
+                <img src="images/gallery_logo.jpg" alt="AL DHMOSH Logo">
+                <span class="gallery-item-number">23</span>
             </div>
         </div>
     </div>
@@ -1502,14 +1668,43 @@
 
         // Gallery Functions
         const galleryImages = {
-            vehicles: [
-                'images/vehicle1.jpg',
-                'images/vehicle2.jpg',
-                'images/vehicle3.jpg',
-                'images/vehicle4.jpg',
-                'images/vehicle5.jpg',
+            sedan: [
+                'images/sedan1.jpg',
+                'images/sedan2.jpg',
+                'images/sedan3.jpg',
+                'images/sedan4.jpg',
+                'images/sedan5.jpg',
+                'images/sedan6.jpg',
+                'images/sedan7.jpg',
+                'images/sedan8.jpg',
+                'images/sedan9.jpg',
+                'images/sedan10.jpg',
+                'images/sedan11.jpg',
                 'images/card_kr.jpg',
-                'images/card_en.jpg'
+                'images/card_en.jpg',
+                'images/gallery_logo.jpg'
+            ],
+            truck: [
+                'images/truck1.jpg',
+                'images/truck2.jpg',
+                'images/truck3.jpg',
+                'images/truck4.jpg',
+                'images/card_kr.jpg',
+                'images/card_en.jpg',
+                'images/gallery_logo.jpg'
+            ],
+            suv: [
+                'images/suv1.jpg',
+                'images/suv2.jpg',
+                'images/suv3.jpg',
+                'images/suv4.jpg',
+                'images/suv5.jpg',
+                'images/suv6.jpg',
+                'images/suv7.jpg',
+                'images/suv8.jpg',
+                'images/card_kr.jpg',
+                'images/card_en.jpg',
+                'images/gallery_logo.jpg'
             ],
             parts: [
                 'images/parts1.jpg',
@@ -1533,12 +1728,24 @@
                 'images/parts19.jpg',
                 'images/parts20.jpg',
                 'images/card_kr.jpg',
-                'images/card_en.jpg'
+                'images/card_en.jpg',
+                'images/gallery_logo.jpg'
             ]
         };
 
         let currentGallery = '';
         let currentIndex = 0;
+
+        function switchVehicleTab(tab) {
+            // 모든 탭 버튼 비활성화
+            document.querySelectorAll('.gallery-tab').forEach(btn => btn.classList.remove('active'));
+            // 모든 탭 콘텐츠 숨기기
+            document.querySelectorAll('.gallery-tab-content').forEach(content => content.classList.remove('active'));
+            
+            // 선택된 탭 활성화
+            event.target.classList.add('active');
+            document.getElementById(tab + '-tab').classList.add('active');
+        }
 
         function openGallery(type) {
             document.getElementById(type + '-gallery').classList.add('active');
